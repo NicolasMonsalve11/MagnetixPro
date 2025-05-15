@@ -1,0 +1,325 @@
+
+:root {
+    --primary: #ff4b2b;   /* Naranja vibrante */
+    --accent: #ffbf00;    /* Amarillo dorado */
+    --light: #f4f4f4;
+    --dark: #222;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Botón flotante de WhatsApp ¿Necesitas ayuda? */
+.whatsapp-help-float {
+    position: fixed;
+    width: auto;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.whatsapp-help-float:hover {
+    background-color: #128c7e;
+}
+.whatsapp-help-float img {
+    width: 32px;
+    height: 32px;
+}
+@media (max-width: 600px) {
+    .whatsapp-help-float {
+        font-size: 14px;
+        height: 48px;
+        padding: 0 12px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .whatsapp-help-float img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(255,75,43,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.hero {
+    background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+    color: var(--white);
+    padding: 5rem 0 4rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(255,75,43,0.10);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--dark);
+    box-shadow: 0 4px 16px rgba(255,191,0,0.15);
+}
+
+.services {
+    padding: 4rem 0 2rem 0;
+    background: var(--white);
+}
+
+.services h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-card {
+    background: var(--light);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255,75,43,0.07);
+    padding: 2rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-bottom: 4px solid var(--accent);
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(255,75,43,0.12);
+    border-bottom: 4px solid var(--primary);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.about {
+    padding: 4rem 0 2rem 0;
+    background: var(--light);
+}
+
+.about h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contact {
+    padding: 4rem 0 2rem 0;
+    background: var(--white);
+}
+
+.contact h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ffd699;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: 2px solid var(--primary);
+    border-color: var(--accent);
+}
+
+#contact-form textarea {
+    min-height: 100px;
+}
+
+#form-message {
+    margin-top: 0.5rem;
+    color: var(--primary);
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        flex-direction: row;
+    }
+    nav ul {
+        flex-direction: column;
+        background: var(--white);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 180px;
+        padding: 1rem 0;
+        box-shadow: 0 2px 8px rgba(255,75,43,0.08);
+        display: none;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
